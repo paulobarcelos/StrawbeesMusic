@@ -86,6 +86,13 @@ class InstrumentSelector extends React.Component {
 					}
 				`}</style>
 				<div className='arrow'
+					role='button'
+					tabIndex='0'
+					onKeyUp={({ key }) => {
+						if (key === 'Enter') {
+							this.onPrev()
+						}
+					}}
 					onClick={this.onPrev}>
 					<ArrowLeft/>
 				</div>
@@ -93,6 +100,13 @@ class InstrumentSelector extends React.Component {
 					{instruments && instruments[instrument].name}
 				</div>
 				<div className='arrow'
+					role='button'
+					tabIndex='0'
+					onKeyUp={({ key }) => {
+						if (key === 'Enter') {
+							this.onNext()
+						}
+					}}
 					onClick={this.onNext}>
 					<ArrowRight/>
 				</div>
@@ -102,10 +116,10 @@ class InstrumentSelector extends React.Component {
 }
 
 InstrumentSelector.propTypes = {
-	instruments   : PropTypes.arrayOf(PropTypes.shape({
-		name  : PropTypes.string,
+	instruments : PropTypes.arrayOf(PropTypes.shape({
+		name : PropTypes.string,
 	})),
-	instrument : PropTypes.number,
+	instrument      : PropTypes.number,
 	onSetInstrument : PropTypes.func
 }
 export default InstrumentSelector

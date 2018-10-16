@@ -10,7 +10,6 @@ import {
 	SETUP_SET_STRINGS,
 	SETUP_SET_DISPLAY_PAGE_LOADER,
 	SETUP_SET_DISPLAY_ERROR,
-	SETUP_SET_OS,
 } from 'src/constants/actionTypes'
 
 const query = (state = null, { type, payload }) => {

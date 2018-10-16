@@ -1,8 +1,18 @@
 {
   "name": "StrawbeesMusic",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": "Paulo Barcelos <paulo@strawbees.com>",
+  "scripts": {
+    "dev": "node lib/scripts/dev.js",
+    "build": "node lib/scripts/build.js",
+    "build-serve": "node lib/scripts/buildServe.js",
+    "npm-bundle:desktop": "CONFIG=desktop node lib/scripts/bundleForNpm.js",
+    "deploy:stage": "CONFIG=stage node lib/scripts/deploy.js",
+    "deploy:production": "CONFIG=production node lib/scripts/deploy.js",
+    "lint": "eslint --fix src/**/*.js pages/**/*.js lib/**/*.js"
+  },
   "dependencies": {
+    "@babel/core": "^7.1.2",
     "babel-plugin-inline-react-svg": "^1.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "isomorphic-unfetch": "^3.0.0",
@@ -26,13 +36,14 @@
     "tone": "^0.12.80",
     "workbox-build": "^3.6.2"
   },
-  "scripts": {
-    "dev": "node lib/scripts/dev.js",
-    "build": "node lib/scripts/build.js",
-    "build-serve": "node lib/scripts/buildServe.js",
-    "npm-bundle:desktop": "CONFIG=desktop node lib/scripts/bundleForNpm.js",
-    "deploy:stage": "CONFIG=stage node lib/scripts/deploy.js",
-    "deploy:production": "CONFIG=production node lib/scripts/deploy.js",
-    "lint": "eslint --fix src/** pages/** lib/**"
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-import-resolver-babel-module": "^5.0.0-beta.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0"
   }
 }

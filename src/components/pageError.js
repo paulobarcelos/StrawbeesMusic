@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 const PageError = ({
 	statusCode,
 }) => <div className='root pageError'>

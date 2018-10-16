@@ -9,6 +9,7 @@ class Key extends React.Component {
 		} = this.props
 		onKeyDown({ key })
 	}
+
 	onUp = () => {
 		const {
 			onKeyUp,
@@ -16,6 +17,7 @@ class Key extends React.Component {
 		} = this.props
 		onKeyUp({ key })
 	}
+
 	render() {
 		const {
 			active,

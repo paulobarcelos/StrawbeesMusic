@@ -12,7 +12,7 @@ class PageHome extends React.Component {
 
 	async componentDidMount() {
 		// Load presets
-		const presets = await(await fetch('/static/presets.json')).json()
+		const presets = await (await fetch('/static/presets.json')).json()
 		this.setState({ presets })
 	}
 

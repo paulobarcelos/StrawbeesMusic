@@ -21,11 +21,12 @@ class Synth extends React.Component {
 	}
 
 	async componentDidMount() {
-		if(typeof window === 'undefined') {
+		if (typeof window === 'undefined') {
 			return
 		}
 
 		// Setup Tone.js
+		// eslint-disable-next-line global-require
 		this.Tone = require('tone')
 		this.Tone.Buffer.on('load', this.setBufferLoaded)
 
@@ -67,8 +68,8 @@ class Synth extends React.Component {
 		this.sampler = new this.Tone.Sampler(samples, options)
 		if (effects && effects.length) {
 			this.effects = []
-			effects.forEach(({ name, options }, i) => {
-				this.effects[i] = new this.Tone[name](options)
+			effects.forEach(({ name, options : effectOptions }, i) => {
+				this.effects[i] = new this.Tone[name](effectOptions)
 				if (i === 0) {
 					this.effects[i].toMaster()
 				} else {
@@ -111,7 +112,7 @@ class Synth extends React.Component {
 			return
 		}
 
-		const setKey = presets[instrument].keys.filter(setKey => setKey.key.toUpperCase() === key).pop()
+		const setKey = presets[instrument].keys.filter(s => s.key.toUpperCase() === key).pop()
 		if (!setKey) {
 			return
 		}
@@ -126,14 +127,15 @@ class Synth extends React.Component {
 			}
 		})
 
-		setKey.notes.forEach(({ note, duration, time, velocity }) => {
+		setKey.notes.forEach(({
+			note, duration, time, velocity
+		}) => {
 			// console.log('attack', note, duration, time, velocity)
 			if (typeof duration === 'undefined') {
 				this.sampler.triggerAttack(note, time, velocity)
 			} else {
 				this.sampler.triggerAttackRelease(note, duration, time, velocity)
 			}
-
 		})
 	}
 
@@ -153,7 +155,7 @@ class Synth extends React.Component {
 			return
 		}
 
-		const setKey = presets[instrument].keys.filter(setKey => setKey.key.toUpperCase() === key).pop()
+		const setKey = presets[instrument].keys.filter(s => s.key.toUpperCase() === key).pop()
 		if (!setKey) {
 			return
 		}
@@ -168,7 +170,7 @@ class Synth extends React.Component {
 			}
 		})
 
-		setKey.notes.forEach(({ note, time }) => {
+		setKey.notes.forEach(({ note }) => {
 			// console.log('release', note)
 			this.sampler.triggerRelease(note)
 		})
@@ -188,7 +190,6 @@ class Synth extends React.Component {
 
 		const {
 			mounted,
-			loaded,
 			active,
 			instrument,
 			pressedKeys
@@ -199,6 +200,7 @@ class Synth extends React.Component {
 		return (
 			<div className={`root synth ${active ? 'active' : ''} ${mounted ? 'mounted' : 'unmounted'}`}
 				tabIndex='0'
+				role='button'
 				onKeyDown={onKeyDown}
 				onKeyUp={onKeyUp}>
 				<style jsx>{`
@@ -276,7 +278,7 @@ class Synth extends React.Component {
 							color={color}
 							onKeyDown={onKeyDown}
 							onKeyUp={onKeyUp}
-							active={pressedKeys[key.toUpperCase()] ? true : false}
+							active={!!pressedKeys[key.toUpperCase()]}
 						/>
 					)}
 				</div>
@@ -298,7 +300,7 @@ Synth.propTypes = {
 			name    : PropTypes.string,
 			options : PropTypes.object,
 		})),
-		keys    : PropTypes.arrayOf(PropTypes.shape({
+		keys : PropTypes.arrayOf(PropTypes.shape({
 			key   : PropTypes.string.isRequired,
 			color : PropTypes.string.isRequired,
 			notes : PropTypes.arrayOf(PropTypes.shape({

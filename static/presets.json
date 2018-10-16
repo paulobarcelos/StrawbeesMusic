@@ -265,14 +265,14 @@
 				"key" : "a",
 				"color" : "#1299ff",
 				"notes" : [
-					{ "note" : "C4" }
+					{ "note" : "C4", "duration" : 0.5 }
 				]
 			},
 			{
 				"key" : "s",
 				"color" : "#7e74ff",
 				"notes" : [
-					{ "note" : "D4" }
+					{ "note" : "D4", "duration" : 0.5 }
 				]
 			},
 			{
@@ -293,7 +293,7 @@
 				"key" : "g",
 				"color" : "#ff8f6c",
 				"notes" : [
-					{ "note" : "G4" }
+					{ "note" : "G4", "duration" : 1.3 }
 				]
 			}
 

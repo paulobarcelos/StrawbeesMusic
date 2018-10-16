@@ -170,9 +170,12 @@ class Synth extends React.Component {
 			}
 		})
 
-		setKey.notes.forEach(({ note }) => {
+		setKey.notes.forEach(({ note, duration }) => {
 			// console.log('release', note)
 			this.sampler.triggerRelease(note)
+			if (typeof duration !== 'undefined') {
+				this.sampler.triggerRelease(note)
+			}
 		})
 	}
 

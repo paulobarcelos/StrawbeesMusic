@@ -4,6 +4,7 @@ import Synth from 'src/components/synth'
 import DocumentHead from 'next/head'
 import StrawbeesMusicLogo from 'src/assets/icons/logos/strawbeesMusic.svg'
 import preloadedPresets from 'root/static/presets.json'
+import Package from 'root/package.json'
 
 class PageHome extends React.Component {
 	state = {
@@ -78,6 +79,14 @@ class PageHome extends React.Component {
 					.root :global(.synth) {
 						flex: 1;
 					}
+					.version {
+						font-family: monospace;
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						font-size: 0.5rem;
+						opacity: 0.1;
+					}
 					@media (max-aspect-ratio: 12/10) {
 						.header {
 							padding: 5vw;
@@ -94,6 +103,9 @@ class PageHome extends React.Component {
 				{presets &&
 					<Synth presets={presets}/>
 				}
+				<div className='version'>
+					{Package.version}
+				</div>
 			</div>
 		)
 	}

@@ -1,0 +1,16 @@
+{
+	"/error/": {
+		"page": "/",
+		"query": {
+			"locale" : "en",
+			"ref" : "error"
+		}
+	},
+	"/": {
+		"page": "/",
+		"query": {
+			"locale" : "en",
+			"ref" : "home"
+		}
+	}
+}

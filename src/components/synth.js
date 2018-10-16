@@ -9,6 +9,7 @@ class Synth extends React.Component {
 	state = {
 		loaded      : false,
 		active      : false,
+		mounted     : false,
 		instrument  : 0,
 		pressedKeys : {}
 	}
@@ -34,6 +35,8 @@ class Synth extends React.Component {
 			this.mobileActivatorRef.current,
 			this.init
 		)
+
+		this.setState({ mounted : true })
 	}
 
 	componentWillUnmount() {
@@ -124,7 +127,7 @@ class Synth extends React.Component {
 		})
 
 		setKey.notes.forEach(({ note, duration, time, velocity }) => {
-			console.log('attack', note, duration, time, velocity)
+			// console.log('attack', note, duration, time, velocity)
 			if (typeof duration === 'undefined') {
 				this.sampler.triggerAttack(note, time, velocity)
 			} else {
@@ -166,7 +169,7 @@ class Synth extends React.Component {
 		})
 
 		setKey.notes.forEach(({ note, time }) => {
-			console.log('release', note)
+			// console.log('release', note)
 			this.sampler.triggerRelease(note)
 		})
 	}
@@ -184,17 +187,17 @@ class Synth extends React.Component {
 		} = this.props
 
 		const {
+			mounted,
 			loaded,
 			active,
 			instrument,
 			pressedKeys
 		} = this.state
 
-
 		const { keys } = presets[instrument]
 
 		return (
-			<div className={`root synth ${active ? 'active' : ''}`}
+			<div className={`root synth ${active ? 'active' : ''} ${mounted ? 'mounted' : 'unmounted'}`}
 				tabIndex='0'
 				onKeyDown={onKeyDown}
 				onKeyUp={onKeyUp}>
@@ -218,18 +221,20 @@ class Synth extends React.Component {
 						color: #fff;
 						font-size: 8vw;
 						z-index: 10;
-						display: flex;
+						display: none;
 						flex-direction: row;
 						align-items: center;
 						justify-content: center;
 					}
-					.root.active .activator,
-					.root.active:focus .activator,
-					.root.active:focus-within .activator {
+					.root.unmounted .activator,
+					.root.mounted.active .activator,
+					.root.mounted.active:focus .activator,
+					.root.mounted.active:focus-within .activator {
 						display: none;
 					}
-					.root.active:not(:focus) .activator,
-					.root.active:not(:focus-within) .activator {
+
+					.root.mounted.active:not(:focus) .activator,
+					.root.mounted.active:not(:focus-within) .activator {
 						display: flex !important;
 					}
 					.icon :global(svg) {

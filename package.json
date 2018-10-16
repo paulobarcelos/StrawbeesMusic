@@ -2,19 +2,37 @@
   "name": "StrawbeesMusic",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
   "dependencies": {
     "babel-plugin-inline-react-svg": "^1.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
     "next": "^7.0.2",
+    "next-redux-wrapper": "^2.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-ga": "^2.5.3",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "rimraf": "^2.6.2",
+    "s3": "^4.4.0",
+    "serve-handler": "^5.0.5",
     "startaudiocontext": "^1.2.1",
-    "tone": "^0.12.80"
+    "tone": "^0.12.80",
+    "workbox-build": "^3.6.2"
   },
   "scripts": {
-    "dev": "next",
-    "build": "next build && next export"
+    "dev": "node lib/scripts/dev.js",
+    "build": "node lib/scripts/build.js",
+    "build-serve": "node lib/scripts/buildServe.js",
+    "npm-bundle:desktop": "CONFIG=desktop node lib/scripts/bundleForNpm.js",
+    "deploy:stage": "CONFIG=stage node lib/scripts/deploy.js",
+    "deploy:production": "CONFIG=production node lib/scripts/deploy.js",
+    "lint": "eslint --fix src/** pages/** lib/**"
   }
 }

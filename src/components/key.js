@@ -24,7 +24,7 @@ class Key extends React.Component {
 		} = this.props
 
 		const events = {}
-		if ('ontouchstart' in document.documentElement) {
+		if (typeof document !== 'undefined' && 'ontouchstart' in document.documentElement) {
 			events.onTouchStart = this.onDown
 			events.onTouchEnd = this.onUp
 		} else {

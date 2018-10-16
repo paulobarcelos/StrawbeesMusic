@@ -127,7 +127,7 @@
 			"G1" : "rhodesG1.[mp3|ogg]",
 			"C2" : "rhodesC2.[mp3|ogg]",
 			"E2" : "rhodesE2.[mp3|ogg]",
-			"G2" : "rhodesG2.[mp3|ogg]",			
+			"G2" : "rhodesG2.[mp3|ogg]",
 			"C3" : "rhodesC3.[mp3|ogg]",
 			"E3" : "rhodesE3.[mp3|ogg]",
 			"G3" : "rhodesG3.[mp3|ogg]",
@@ -240,6 +240,60 @@
 				"color" : "#ff8f6c",
 				"notes" : [
 					{ "note" : "D4" }
+				]
+			}
+
+		]
+	},
+
+	{
+		"name" : "TIGHT DRUMS",
+		"samples" : {
+			"C4" : "DR1_C4_kick-gritty.[mp3|ogg]",
+			"D4" : "DR1_D4_snare-vinyl01.[mp3|ogg]",
+			"F4" : "DR1_E4_tom-rototom.[mp3|ogg]",
+			"E4" : "DR1_F4_hihat-reso.[mp3|ogg]",
+			"G4" : "DR1_G4_crash-tape.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0,
+			"release" : 1.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C4" }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "D4" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "E4" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "F4" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "G4" }
 				]
 			}
 

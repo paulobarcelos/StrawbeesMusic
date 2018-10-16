@@ -87,7 +87,6 @@ class InstrumentSelector extends React.Component {
 				`}</style>
 				<div className='arrow'
 					role='button'
-					tabIndex='0'
 					onKeyUp={({ key }) => {
 						if (key === 'Enter') {
 							this.onPrev()
@@ -101,7 +100,6 @@ class InstrumentSelector extends React.Component {
 				</div>
 				<div className='arrow'
 					role='button'
-					tabIndex='0'
 					onKeyUp={({ key }) => {
 						if (key === 'Enter') {
 							this.onNext()

@@ -1,6 +1,6 @@
 {
   "name": "StrawbeesMusic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Paulo Barcelos <paulo@strawbees.com>",
   "scripts": {
     "dev": "node lib/scripts/dev.js",

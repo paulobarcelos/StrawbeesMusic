@@ -1,0 +1,33 @@
+{
+	"presets": [
+		"next/babel"
+	],
+	"plugins": [
+		[
+			"inline-react-svg",
+			{
+				"svgo": {
+					"plugins": [
+						{
+							"cleanupIDs": false
+						}
+					]
+
+				}
+			}
+		],
+		[
+			"module-resolver",
+			{
+				"root": [
+					"./"
+				],
+				"alias": {
+					"root": "./",
+					"static": "./static",
+					"src": "./src"
+				}
+			}
+		]
+	]
+}

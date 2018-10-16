@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+yarn-error.log
+/aws-config-*.json
+!/aws-config-template.json
+/.env
+/.next
+/out
+/npm-bundle
+/static/locales/
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

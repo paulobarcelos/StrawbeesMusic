@@ -1,0 +1,147 @@
+[
+	{
+		"name" : "FUNKY MARIMBA",
+		"samples" : {
+			"C3" : "marimbaC3.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0,
+			"release" : 0.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"effects" : [
+			{
+				"name" : "PingPongDelay",
+				"options" : {
+					"delayTime" : "8n",
+					"feedback" : 0.6,
+					"wet" : 0.5
+				}
+			}
+		],
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C3" }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "D3" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "E3" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "F3" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "G3" }
+				]
+			}
+
+		]
+	},
+	{
+		"name" : "Guitar",
+		"samples" : {
+			"C3" : "accguitC3.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0.5,
+			"release" : 0.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C3" }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "D3" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "E3" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "F3" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "G3" }
+				]
+			}
+
+		]
+	},
+	{
+		"name" : "piano",
+		"samples" : {
+			"C4" : "pianoC4.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0,
+			"release" : 0.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "red",
+				"notes" : [
+					{ "note" : "C3"}
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "green",
+				"notes" : [
+					{ "note" : "D3", "duration" : "0.2"},
+					{ "note" : "A3",  "time" : "+0.1" },
+					{ "note" : "D3", "duration" : "0.2", "time" : "+0.2" },
+					{ "note" : "A3",  "time" :  "+0.3" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "blue",
+				"notes" : [
+					{ "note" : "F3"}
+				]
+			}
+		]
+	}
+]

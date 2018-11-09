@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+- '11.1.0'
+os:
+- osx
+script:
+- node lib/scripts/packageDesktopApp.js
+branches:
+  only:
+    - master
+    - develop
+deploy:
+  -
+    provider: s3
+    access_key_id:
+      secure: "tPzh5o+MMBqwvAwa0flzUtja/mcIwTPVwZuPM54c5GM1kcPsryjnuQs2K8/vIZQstP0inUbNqaUz+bbuZucp0OVMnx2Ww1ZFaa/NBgweh0nOHbbhz/NI0n2QDh53opuTBEdAS+1EZ7lKpdBZSI5BtzdjydmZ6VXJIrqmHPm1RK7aNQ4StmxJ67eYzxRzS22c4evwqi88XfGTdusyCvjHtAXff5X5IoC0NXGZkZKGxcA5OCwWbBqhri3dnUmnE5moockQyH97sVXVNfX1/3Ur9uKJFeR67bdY/nfavFEcpMxfewQfWHZAfPZMoRyQkTeAdvcsMg9xaZ3q99hhVQtauxNKZGJZLJ9FpfbqVCdrGPtRlwUdmGSVI6B2qwrurTqWCZ93U1dDVwDC7SGYMcEkq7RoyftoYtArdhlm4uBuRpkvgcu2YFEKWStb+ozPOw52r1a0pj0gtR29XOrSDeq8hS/K8RtnmZ+XAvQ2n3Yo8DxtknREkO7Uxei2zRzGMVEByBvvOhpqsNT7Greh9SL4ZSJ0WAyfXvyXwmbPGBqy8fy9dn/thZCyMt0OTtH4S/c+PMKaeNDH4gStnVG+y/EUnNz0IjDnxTKKf5OGRGTeEmwP3cfXsZgAwkOtbXRcTpeClCiejAHNP6bqul0tFSaw+CNWW70lN0JzzzkRQZdhbr0="
+    secret_access_key:
+      secure: "ZxqVue4Lkf+If5l0T3AM7hF58QCmIuLjlQiGcpgOg0ULJXaAYKndA9dBrUQ21QP1OIetoQiucZEWm3BUiUaCTz7+zDb8Twzj6c3QCWGaN7sf7vGILRHTzSWVNL/s13E2nWL3C5hbrgQp9wIMnReVMJG8WYlWZ/XS64LHIr0qJqSu8ZMBXdShAJM9gjgfoE395I6y02+gYxQV+DvWIxwqZcocGuO2nh+S3G990NokLfwIs0FZjnDaoKaNHnSadI6bFGSeLzPbYBewogP9o7J3B9FOFVLzA8h9bsf5f72l2lhCj040K9xwvOCsht8j2lMfbIBlGo9SOlBuzbWYDGgIHYcOUZL9IVpgeVig2DHH5KL4mgoI8h5BRFL1JA+iPxdybrrtkC6yOHWWZOVa5Q7VB4ykTZ0243P7ThW6ywnAqeF6P3mxlq0bxZ58v5pEiEv6sbWL+lfVvtkIQs31r+G+rguuhDti8A3F0uGfYzqxlwizTMMKTnllYdaMhbaWmT+0o6OVD5xCvknlpPYuWJaMVaQyV20PSjH0JqfFJFSF7Kjc2oeRgXBKsBA91r8gJmBg7eoVVLghUWCGZW+tWSg3r4SOPVLlosgB17MDq5kk0a9btboPkntqmrnvDAc/qHZfw19uxgUaG/eQ5nBaqE2OdcQvQjaBnzYJQKa7NWiDDbo="
+    bucket: quirkbot-downloads-production
+    region: us-east-1
+    local_dir: music-nwjs-build/versions
+    upload-dir: music-nwjs-build/versions
+    skip_cleanup: true
+    on:
+      branch: master
+  -
+    provider: s3
+    access_key_id:
+      secure: "tPzh5o+MMBqwvAwa0flzUtja/mcIwTPVwZuPM54c5GM1kcPsryjnuQs2K8/vIZQstP0inUbNqaUz+bbuZucp0OVMnx2Ww1ZFaa/NBgweh0nOHbbhz/NI0n2QDh53opuTBEdAS+1EZ7lKpdBZSI5BtzdjydmZ6VXJIrqmHPm1RK7aNQ4StmxJ67eYzxRzS22c4evwqi88XfGTdusyCvjHtAXff5X5IoC0NXGZkZKGxcA5OCwWbBqhri3dnUmnE5moockQyH97sVXVNfX1/3Ur9uKJFeR67bdY/nfavFEcpMxfewQfWHZAfPZMoRyQkTeAdvcsMg9xaZ3q99hhVQtauxNKZGJZLJ9FpfbqVCdrGPtRlwUdmGSVI6B2qwrurTqWCZ93U1dDVwDC7SGYMcEkq7RoyftoYtArdhlm4uBuRpkvgcu2YFEKWStb+ozPOw52r1a0pj0gtR29XOrSDeq8hS/K8RtnmZ+XAvQ2n3Yo8DxtknREkO7Uxei2zRzGMVEByBvvOhpqsNT7Greh9SL4ZSJ0WAyfXvyXwmbPGBqy8fy9dn/thZCyMt0OTtH4S/c+PMKaeNDH4gStnVG+y/EUnNz0IjDnxTKKf5OGRGTeEmwP3cfXsZgAwkOtbXRcTpeClCiejAHNP6bqul0tFSaw+CNWW70lN0JzzzkRQZdhbr0="
+    secret_access_key:
+      secure: "ZxqVue4Lkf+If5l0T3AM7hF58QCmIuLjlQiGcpgOg0ULJXaAYKndA9dBrUQ21QP1OIetoQiucZEWm3BUiUaCTz7+zDb8Twzj6c3QCWGaN7sf7vGILRHTzSWVNL/s13E2nWL3C5hbrgQp9wIMnReVMJG8WYlWZ/XS64LHIr0qJqSu8ZMBXdShAJM9gjgfoE395I6y02+gYxQV+DvWIxwqZcocGuO2nh+S3G990NokLfwIs0FZjnDaoKaNHnSadI6bFGSeLzPbYBewogP9o7J3B9FOFVLzA8h9bsf5f72l2lhCj040K9xwvOCsht8j2lMfbIBlGo9SOlBuzbWYDGgIHYcOUZL9IVpgeVig2DHH5KL4mgoI8h5BRFL1JA+iPxdybrrtkC6yOHWWZOVa5Q7VB4ykTZ0243P7ThW6ywnAqeF6P3mxlq0bxZ58v5pEiEv6sbWL+lfVvtkIQs31r+G+rguuhDti8A3F0uGfYzqxlwizTMMKTnllYdaMhbaWmT+0o6OVD5xCvknlpPYuWJaMVaQyV20PSjH0JqfFJFSF7Kjc2oeRgXBKsBA91r8gJmBg7eoVVLghUWCGZW+tWSg3r4SOPVLlosgB17MDq5kk0a9btboPkntqmrnvDAc/qHZfw19uxgUaG/eQ5nBaqE2OdcQvQjaBnzYJQKa7NWiDDbo="
+    bucket: quirkbot-downloads-stage
+    region: us-east-1
+    local_dir: music-nwjs-build/versions
+    upload-dir: music-nwjs-build/versions
+    skip_cleanup: true
+    on:
+      branch: develop

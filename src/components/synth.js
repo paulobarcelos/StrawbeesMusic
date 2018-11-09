@@ -308,7 +308,7 @@ Synth.propTypes = {
 			color : PropTypes.string.isRequired,
 			notes : PropTypes.arrayOf(PropTypes.shape({
 				note     : PropTypes.string,
-				duration : PropTypes.string,
+				duration : PropTypes.number,
 				time     : PropTypes.string,
 				velocity : PropTypes.string,
 			})).isRequired,

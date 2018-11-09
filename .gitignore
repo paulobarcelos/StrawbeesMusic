@@ -6,7 +6,10 @@ yarn-error.log
 /.env
 /.next
 /out
-/npm-bundle
+/nwjs-build
+/music-nwjs-build
+/nwjs-out
+/nwjs-temp
 /static/locales/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml

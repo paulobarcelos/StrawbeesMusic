@@ -1,0 +1,302 @@
+[
+	{
+		"name" : "FUNKY MARIMBA",
+		"samples" : {
+			"C3" : "marimbaC3.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0,
+			"release" : 0.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"effects" : [
+			{
+				"name" : "PingPongDelay",
+				"options" : {
+					"delayTime" : "8n",
+					"feedback" : 0.4,
+					"wet" : 0.3
+				}
+			}
+		],
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C3" }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "D3" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "E3" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "F3" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "G3" }
+				]
+			}
+
+		]
+	},
+	{
+		"name" : "DREAMY GUITAR",
+		"samples" : {
+			"G3" : "acguitG3.[mp3|ogg]",
+			"C4" : "acguitC4.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0.1,
+			"release" : 1.3,
+			"baseUrl" : "/static/audio/"
+		},
+		"effects" : [
+			{
+				"name" : "PingPongDelay",
+				"options" : {
+					"delayTime" : "32n",
+					"feedback" : 0.9,
+					"wet" : 0.3
+				}
+			}
+
+		],
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C3" }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "E3" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "G3" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "A3" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "C4" }
+				]
+			}
+
+		]
+	},
+		{
+		"name" : "COSY RHODES",
+		"samples" : {
+			"C1" : "rhodesC1.[mp3|ogg]",
+			"E1" : "rhodesE1.[mp3|ogg]",
+			"G1" : "rhodesG1.[mp3|ogg]",
+			"C2" : "rhodesC2.[mp3|ogg]",
+			"E2" : "rhodesE2.[mp3|ogg]",
+			"G2" : "rhodesG2.[mp3|ogg]",
+			"C3" : "rhodesC3.[mp3|ogg]",
+			"E3" : "rhodesE3.[mp3|ogg]",
+			"G3" : "rhodesG3.[mp3|ogg]",
+			"C4" : "rhodesC4.[mp3|ogg]",
+			"G4" : "rhodesG4.[mp3|ogg]"
+		},
+
+		"options" : {
+			"attack"  : 0.1,
+			"release" : 0.4,
+			"baseUrl" : "/static/audio/"
+		},
+
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C1"},
+					{ "note" : "G3"}
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "D1"},
+					{ "note" : "A3"}
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "E1"},
+					{ "note" : "B3"}
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "F2"},
+					{ "note" : "C4"}
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "G2"},
+					{ "note" : "D4"}
+				]
+			}
+
+		]
+	},
+	{
+		"name" : "MELANCHOLIC PIANO",
+		"samples" : {
+			"C4" : "pianoC4.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0,
+			"release" : 1.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"effects" : [
+			{
+				"name" : "PingPongDelay",
+				"options" : {
+					"delayTime" : "8n",
+					"feedback" : 0.3,
+					"wet" : 0.2
+				}
+			}
+
+		],
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "E3" }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "G3" }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "B3" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "C#4" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "D4" }
+				]
+			}
+
+		]
+	},
+
+	{
+		"name" : "TIGHT DRUMS",
+		"samples" : {
+			"C4" : "DR1_C4_kick-gritty.[mp3|ogg]",
+			"D4" : "DR1_D4_snare-vinyl01.[mp3|ogg]",
+			"F4" : "DR1_E4_tom-rototom.[mp3|ogg]",
+			"E4" : "DR1_F4_hihat-reso.[mp3|ogg]",
+			"G4" : "DR1_G4_crash-tape.[mp3|ogg]"
+		},
+		"options" : {
+			"attack"  : 0,
+			"release" : 1.5,
+			"baseUrl" : "/static/audio/"
+		},
+		"keys" : [
+			{
+				"key" : "a",
+				"color" : "#1299ff",
+				"notes" : [
+					{ "note" : "C4", "duration" : 0.5 }
+				]
+			},
+			{
+				"key" : "s",
+				"color" : "#7e74ff",
+				"notes" : [
+					{ "note" : "D4", "duration" : 0.5 }
+				]
+			},
+			{
+				"key" : "d",
+				"color" : "#c46dd9",
+				"notes" : [
+					{ "note" : "E4" }
+				]
+			},
+			{
+				"key" : "f",
+				"color" : "#ff6ea7",
+				"notes" : [
+					{ "note" : "F4" }
+				]
+			},
+			{
+				"key" : "g",
+				"color" : "#ff8f6c",
+				"notes" : [
+					{ "note" : "G4", "duration" : 1.3 }
+				]
+			}
+
+		]
+	}
+]

@@ -1,0 +1,16 @@
+.DS_Store
+node_modules
+yarn-error.log
+/aws-config-*.json
+!/aws-config-template.json
+/.env
+/.next
+/out
+/nwjs-build
+/music-nwjs-build
+/nwjs-out
+/nwjs-temp
+/static/locales/
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

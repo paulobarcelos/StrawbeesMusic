@@ -1,0 +1,52 @@
+environment:
+  nodejs_version: 11.1.0
+
+platform:
+  - x86
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - cinst -y nsis
+  - SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
+  - yarn
+build_script:
+  - cmd: node lib\scripts\packageDesktopApp.js
+
+test_script:
+  - node --version
+  - npm --version
+  - yarn --version
+
+artifacts:
+  - path: music-nwjs-build\versions\**\*
+    name: build
+
+version: "{build}"
+
+skip_tags: true
+
+deploy:
+  - provider: S3
+    access_key_id:
+      secure: 1joZTNZgmvLkKm8loxEpluxvQfInd6tssEaIysW4ONs=
+    secret_access_key:
+      secure: V7c3H3iFazbpHOxThQMIkcZCp99uEBOAcE8v75qMZAvap9SwbGprXuQ4KIiTSDvF
+    bucket: quirkbot-downloads-stage
+    region: us-east-1
+    set_public: true
+    folder:
+    artifact: build
+    on:
+      branch: develop
+  - provider: S3
+    access_key_id:
+      secure: 1joZTNZgmvLkKm8loxEpluxvQfInd6tssEaIysW4ONs=
+    secret_access_key:
+      secure: V7c3H3iFazbpHOxThQMIkcZCp99uEBOAcE8v75qMZAvap9SwbGprXuQ4KIiTSDvF
+    bucket: quirkbot-downloads-production
+    region: us-east-1
+    set_public: true
+    folder:
+    artifact: build
+    on:
+      branch: master

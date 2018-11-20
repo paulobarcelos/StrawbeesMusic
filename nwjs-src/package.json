@@ -1,0 +1,22 @@
+{
+	"name": "StrawbeesMUSIC",
+	"executable-name": "StrawbeesMUSIC",
+	"nwjs-version" : "0.34.2",
+	"description": "",
+	"autoupdate": {
+		"stage": "https://s3.amazonaws.com/strawbees-downloads-stage/music-nwjs-build/versions",
+		"prodcution": "https://s3.amazonaws.com/strawbees-downloads-production/music-nwjs-build/versions"
+	},
+	"main": "index.html",
+	"window": {
+		"title": "Strawbees MUSIC",
+		"toolbar": true,
+		"frame": true,
+		"width": 1100,
+		"height": 550,
+		"min_width": 700,
+		"min_height": 400,
+		"icon": "static/favicon/android-chrome-512x512.png"
+	},
+	"author": "Paulo Barcelos <paulo@strawbees.com>"
+}

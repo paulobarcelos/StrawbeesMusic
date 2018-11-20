@@ -1,6 +1,6 @@
 {
   "name": "strawbees-music",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Paulo Barcelos <paulo@strawbees.com>",
   "scripts": {
     "dev": "node lib/scripts/dev.js",
@@ -31,7 +31,7 @@
     "s3": "^4.4.0",
     "serve-handler": "^5.0.5",
     "startaudiocontext": "^1.2.1",
-    "strawbees-app-packager": "^1.2.13",
+    "strawbees-app-packager": "^1.2.14",
     "tone": "^0.12.80",
     "workbox-build": "^3.6.2"
   },

@@ -8,14 +8,13 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - cinst -y nsis
   - SET PATH=C:\Program Files\NSIS\;C:\Program Files (x86)\NSIS\;%PATH%
-  - yarn
+  - npm install --production
 build_script:
   - cmd: node lib\scripts\packageDesktopApp.js
 
 test_script:
   - node --version
   - npm --version
-  - yarn --version
 
 artifacts:
   - path: music-nwjs-build\versions\**\*
@@ -31,7 +30,7 @@ deploy:
       secure: 1joZTNZgmvLkKm8loxEpluxvQfInd6tssEaIysW4ONs=
     secret_access_key:
       secure: V7c3H3iFazbpHOxThQMIkcZCp99uEBOAcE8v75qMZAvap9SwbGprXuQ4KIiTSDvF
-    bucket: quirkbot-downloads-stage
+    bucket: strawbees-downloads-stage
     region: us-east-1
     set_public: true
     folder:
@@ -43,7 +42,7 @@ deploy:
       secure: 1joZTNZgmvLkKm8loxEpluxvQfInd6tssEaIysW4ONs=
     secret_access_key:
       secure: V7c3H3iFazbpHOxThQMIkcZCp99uEBOAcE8v75qMZAvap9SwbGprXuQ4KIiTSDvF
-    bucket: quirkbot-downloads-production
+    bucket: strawbees-downloads-production
     region: us-east-1
     set_public: true
     folder:

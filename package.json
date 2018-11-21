@@ -31,7 +31,7 @@
     "s3": "^4.4.0",
     "serve-handler": "^5.0.5",
     "startaudiocontext": "^1.2.1",
-    "strawbees-app-packager": "^1.2.15",
+    "strawbees-app-packager": "^1.2.16",
     "tone": "^0.12.80",
     "workbox-build": "^3.6.2"
   },
